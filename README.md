@@ -44,3 +44,7 @@ To start the step, simply run `python .\generate_embeddings.py`, check the Ollam
 
 ## Submit your first query
 The final step is to use the system, simply run `python .\send_query.py "What is the capital of India?"` and put between the `""` your query. The system will answer, also providing the sources for the material.
+
+# ChatBot like Interface
+Instead of submitting queries through the terminal using `send_query.py`, you can launch `chat_gui.py` and chat with the model via a ChatBot interface.
+Note that the model does not retain memory of the past interactions, so each submit is independent.
