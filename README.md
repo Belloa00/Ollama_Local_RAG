@@ -35,9 +35,12 @@ pip install -r requirements.txt
 
 - Make sure to create the folder `data` with all your documents in it.
 
+## Create your .env file
+Create an `.env` file like the provided example `.env.example` and change the paths to your specific ones. You can simply rename the `.env.example` to `.env` if you want to test it using the default paths.
+
 ## Populate the VectorDB
 The first step is to populate the VectorDB (Chroma) with the embeddings of the documents inside `data`.
-To start the step, simply run `python .\generate_embeddings.py`, check the Ollama terminal to see if the processing is running, and wait a bit. Note that this step takes some minutes.
+To start the step, simply run `python .\generate_embeddings.py`, check the Ollama terminal to see if the process is running, and wait a bit. Note that this step takes some minutes.
 
 ## Submit your first query
 The final step is to use the system, simply run `python .\send_query.py "What is the capital of India?"` and put between the `""` your query. The system will answer, also providing the sources for the material.
