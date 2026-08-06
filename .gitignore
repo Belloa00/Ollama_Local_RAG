@@ -1,0 +1,7 @@
+.env
+.venv64
+data
+chroma
+__pycache__
+chunks.pkl
+send_query_reusable.py

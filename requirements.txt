@@ -1,0 +1,12 @@
+pdf2image
+pytesseract
+langchain
+langchain-experimental
+langchain-ollama
+langchain-aws
+langchain-chroma
+pymupdf
+pillow
+chromadb
+python-dotenv
+customtkinter
