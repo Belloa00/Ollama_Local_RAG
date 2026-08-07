@@ -45,6 +45,8 @@ def clear_database():
         shutil.rmtree(CHROMA_PATH)
 
 def calculate_chunk_ids(chunks):
+    seen = {}
+
     for chunk in chunks:
         content = chunk.page_content.strip()
 
@@ -52,7 +54,15 @@ def calculate_chunk_ids(chunks):
             content.encode("utf-8")
         ).hexdigest()
 
-        chunk.metadata["id"] = chunk_hash
+        document_hash = chunk.metadata["document_hash"]
+    
+        # Count identical chunks within the same document
+        key = (document_hash, chunk_hash)
+        occurrence = seen.get(key, 0)
+        chunk_id = f"{document_hash}:{chunk_hash}:{occurrence}"
+        seen[key] = occurrence + 1
+
+        chunk.metadata["id"] = chunk_id
 
     return chunks
    
