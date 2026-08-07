@@ -81,6 +81,7 @@ def main():
 
         with open(CACHE_FILE, "wb") as f:
             pickle.dump(chunks, f)
+    add_to_chromadb(chunks)
 
 if __name__ == "__main__":
     main()
